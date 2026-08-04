@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Qual é a fruta favorita de Ryuk?",
+    "options": ["Banana", "Morango", "Maçã", "Laranja"],
+    "correctAnswer": "Maçã"
+  },
+  {
+    "question": "Qual é o nome do Shinigami que deixa o Death Note cair no mundo humano pela primeira vez na história?",
+    "options": ["Rem", "Ryuk", "Sidoh", "Gelus"],
+    "correctAnswer": "Ryuk"
+  },
+  {
+    "question": "O que acontece com alguém cujo nome é escrito no Death Note se a causa da morte não for especificada?",
+    "options": ["A morte é instantânea por decapitação", "A pessoa morre de ataque cardíaco em 40 segundos", "A pessoa entra em coma eterno", "A pessoa morre de causas naturais em 7 dias"],
+    "correctAnswer": "A pessoa morre de ataque cardíaco em 40 segundos"
+  },
+  {
+    "question": "Qual é o nome verdadeiro do detetive L?",
+    "options": ["Lawliet", "L. Taylor", "L. Lawliet", "Lind L. Tailor"],
+    "correctAnswer": "L. Lawliet"
+  },
+  {
+    "question": "Qual é o doce favorito de Mello?",
+    "options": ["Bolo de morango", "Chocolate", "Balas de goma", "Sorvete"],
+    "correctAnswer": "Chocolate"
+  },
+  {
+    "question": "Qual é o nome do segundo Kira (Misa Amane) Shinigami original, que se sacrifica por ela?",
+    "options": ["Ryuk", "Rem", "Gelus", "Sidoh"],
+    "correctAnswer": "Gelus"
+  },
+  {
+    "question": " Qual é o nome do agente do FBI que investiga Light Yagami e acaba sendo morto por ele no ônibus?",
+    "options": ["Raye Penber", "Naomi Misora", "Aiber", "Wedy"],
+    "correctAnswer": "Raye Penber"
+  },
+  {
+    "question": "No mangá e no anime, qual o número exato de regras que o Death Note possui listadas em sua capa/instruções principais originais?",
+    "options": ["Cinquenta regras", "Dez regras", "Vinte e quatro regras", "Cinqüenta e quatro regras"],
+    "correctAnswer": "Dez regras"
+  },
+  {
+    "question": " Qual o nome do criminoso que L usa para testar o Death Note na televisão ao vivo transmitida apenas na região de Kanto?",
+    "options": ["Kiichiro Osoreda", "Lind L. Tailor", "Kurahori", "Takeshi Ooi"],
+    "correctAnswer": "Lind L. Tailor"
+  },
+  {
+    "question": " Qual é o nome do Shinigami que vendeu seu próprio Death Note para o Rei dos Shinigami e é dono do caderno que Misa encontra posteriormente?",
+    "options": ["Sidoh", "Armonia Justin", "Gelus", "Jeorge"],
+    "correctAnswer": "Sidoh"
+  }
+]
