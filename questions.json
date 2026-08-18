@@ -25,27 +25,27 @@
     "correctAnswer": "Chocolate"
   },
   {
-    "question": "Qual é o nome do segundo Kira (Misa Amane) Shinigami original, que se sacrifica por ela?",
+    "question": "Qual é o nome do Shinigami original de Misa Amane que se sacrifica por ela?",
     "options": ["Ryuk", "Rem", "Gelus", "Sidoh"],
     "correctAnswer": "Gelus"
   },
   {
-    "question": " Qual é o nome do agente do FBI que investiga Light Yagami e acaba sendo morto por ele no ônibus?",
+    "question": "Qual é o nome do agente do FBI que investiga Light Yagami e acaba sendo morto por ele?",
     "options": ["Raye Penber", "Naomi Misora", "Aiber", "Wedy"],
     "correctAnswer": "Raye Penber"
   },
   {
-    "question": "No mangá e no anime, qual o número exato de regras que o Death Note possui listadas em sua capa/instruções principais originais?",
-    "options": ["Cinquenta regras", "Dez regras", "Vinte e quatro regras", "Cinqüenta e quatro regras"],
+    "question": "Quantas regras principais o Death Note possui listadas em suas instruções originais na capa?",
+    "options": ["Cinquenta regras", "Dez regras", "Vinte e quatro regras", "Cinquenta e quatro regras"],
     "correctAnswer": "Dez regras"
   },
   {
-    "question": " Qual o nome do criminoso que L usa para testar o Death Note na televisão ao vivo transmitida apenas na região de Kanto?",
+    "question": "Qual o nome do criminoso que L usa para testar o Death Note na transmissão de TV ao vivo na região de Kanto?",
     "options": ["Kiichiro Osoreda", "Lind L. Tailor", "Kurahori", "Takeshi Ooi"],
     "correctAnswer": "Lind L. Tailor"
   },
   {
-    "question": " Qual é o nome do Shinigami que vendeu seu próprio Death Note para o Rei dos Shinigami e é dono do caderno que Misa encontra posteriormente?",
+    "question": "Qual é o nome do Shinigami dono do caderno que Misa encontra posteriormente (que havia perdido para o Rei dos Shinigami)?",
     "options": ["Sidoh", "Armonia Justin", "Gelus", "Jeorge"],
     "correctAnswer": "Sidoh"
   }
