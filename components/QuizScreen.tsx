@@ -43,7 +43,11 @@ export default function QuizScreen() {
   const isDesktop = width >= 900;
 
   const contentMaxWidth = isDesktop ? 560 : "100%";
-  const logoHeight = isMobile ? 95 : isDesktop ? 150 : 170;
+  
+  // Logo levemente maior no celular
+  const logoWidth = isMobile ? width * 0.94 : 400;
+  const logoHeight = isMobile ? 130 : 150;
+
   const questionFontSize = isMobile ? 16 : 21;
   const optionFontSize = isMobile ? 13 : 16;
 
@@ -81,32 +85,48 @@ export default function QuizScreen() {
   const getRankMessage = () => {
     const percentage = (score / totalQuestions) * 100;
     if (percentage === 100) return "CLASSIFICAÇÃO: NOVO L // Sucessor Direto";
-    if (percentage >= 60) return "CLASSIFICAÇÃO: MEMBRO DA FORÇA-TAREFA";
+    if (percentage >= 60) return "CLASSIFICAÇÃO: MEMBRO DELLA FORÇA-TAREFA";
     return "CLASSIFICAÇÃO: VÍTIMA DE KIRA // Caso Encerrado";
   };
 
-  // ─── TELA DE RESULTADO FINAL ─────────────────────────────────────────────
+  // ─── TELA DE RESULTADO FINAL (CENTRALIZADA E REESTILIZADA) ────────────────
   if (isFinished) {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        <View style={styles.finishScreenWrapper}>
           <View style={[styles.content, { maxWidth: contentMaxWidth, width: "100%", alignSelf: "center", alignItems: "center" }]}>
-            <View style={[styles.questionContainer, isMobile && { padding: 18 }]}>
-              <Text style={[styles.questionText, { fontFamily, fontSize: questionFontSize, marginBottom: 15, textAlign: "center" }]}>
+            <View style={[styles.finishContainer, isMobile && { padding: 22 }]}>
+              
+              <Text style={[styles.finishHeaderTag, { fontFamily }]}>
+                [ NPA INVESTIGATION DIVISION ]
+              </Text>
+
+              <Text style={[styles.questionText, { fontFamily, fontSize: questionFontSize + 2, marginBottom: 20, textAlign: "center", color: "#fff" }]}>
                 INVESTIGAÇÃO CONCLUÍDA
               </Text>
-              <Text style={[styles.bodyText, { fontFamily, textAlign: "center", marginBottom: 10, fontSize: isMobile ? 14 : 16 }]}>
-                Acertos: {score} de {totalQuestions}
-              </Text>
-              <Text style={[styles.rankText, { fontFamily, textAlign: "center", marginBottom: 25, fontSize: isMobile ? 12 : 13 }]}>
+
+              <View style={styles.finishDivider} />
+
+              <View style={styles.scoreBox}>
+                <Text style={[styles.bodyText, { fontFamily, textAlign: "center", fontSize: isMobile ? 14 : 16, color: "#c2bcad" }]}>
+                  Pontuação Final:
+                </Text>
+                <Text style={[styles.scoreNumber, { fontFamily }]}>
+                  {score} / {totalQuestions}
+                </Text>
+              </View>
+
+              <Text style={[styles.rankText, { fontFamily, textAlign: "center", marginBottom: 30, fontSize: isMobile ? 13 : 14 }]}>
                 {getRankMessage()}
               </Text>
-              <TouchableOpacity style={styles.nextButton} onPress={handleRestartQuiz}>
+
+              <TouchableOpacity style={styles.nextButton} activeOpacity={0.8} onPress={handleRestartQuiz}>
                 <Text style={[styles.nextButtonText, { fontFamily }]}>REINICIAR ARQUIVO</Text>
               </TouchableOpacity>
+
             </View>
           </View>
-        </ScrollView>
+        </View>
       </SafeAreaView>
     );
   }
@@ -115,17 +135,17 @@ export default function QuizScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView
-        contentContainerStyle={styles.scrollContent}
+        contentContainerStyle={[styles.scrollContent, isMobile && { paddingTop: 40, paddingBottom: 16 }]}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
         <View style={[styles.content, { maxWidth: contentMaxWidth, width: "100%", alignSelf: "center" }]}>
 
           {/* Cabeçalho */}
-          <View style={[styles.headerContainer, isMobile && { marginBottom: 14 }]}>
+          <View style={[styles.headerContainer, isMobile && { marginBottom: 22 }]}>
             <Image
               source={require("../assets/imagem/logo_death_note.jpg")}
-              style={[styles.headerImage, { height: logoHeight }]}
+              style={{ width: logoWidth, height: logoHeight, marginBottom: 4 }}
               resizeMode="contain"
             />
             <View style={styles.headerBadge}>
@@ -224,7 +244,13 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
+    justifyContent: "flex-start",
+    padding: 16,
+  },
+  finishScreenWrapper: {
+    flex: 1,
     justifyContent: "center",
+    alignItems: "center",
     padding: 16,
   },
   content: {
@@ -233,10 +259,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignItems: "center",
     marginBottom: 20,
-  },
-  headerImage: {
-    width: "85%",
-    marginBottom: 10,
+    width: "100%",
   },
   headerBadge: {
     borderBottomWidth: 1,
@@ -263,6 +286,49 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 8,
     elevation: 6,
+  },
+  finishContainer: {
+    backgroundColor: "#12100e",
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#5c1a1a",
+    padding: 28,
+    width: "100%",
+    alignItems: "center",
+    shadowColor: "#3a0505",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 8,
+  },
+  finishHeaderTag: {
+    color: "#8c8c8c",
+    fontSize: 10,
+    letterSpacing: 2,
+    marginBottom: 12,
+  },
+  finishDivider: {
+    width: "80%",
+    height: 1,
+    backgroundColor: "#3d1919",
+    marginBottom: 20,
+  },
+  scoreBox: {
+    backgroundColor: "#0a0908",
+    borderWidth: 1,
+    borderColor: "#2a1515",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 3,
+    marginBottom: 20,
+    alignItems: "center",
+    width: "100%",
+  },
+  scoreNumber: {
+    color: "#f0ece1",
+    fontSize: 28,
+    letterSpacing: 2,
+    marginTop: 4,
   },
   questionText: {
     color: "#f0ece1",
@@ -334,12 +400,14 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     marginTop: 8,
-    backgroundColor: "#140a0a",
+    backgroundColor: "#1c0d0d",
     borderWidth: 1,
-    borderColor: "#6b1d1d",
-    paddingVertical: 12,
+    borderColor: "#8a2222",
+    paddingVertical: 14,
+    paddingHorizontal: 24,
     borderRadius: 4,
     alignItems: "center",
+    width: "100%",
   },
   nextButtonText: {
     color: "#f0ece1",
@@ -352,3 +420,4 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
 });
+
